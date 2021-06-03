@@ -1,13 +1,15 @@
 # haproxy
 **By: Clemente Machado**
+![image](https://user-images.githubusercontent.com/30154971/120698673-be758780-c485-11eb-84e9-6dce872d6f5b.png)
 
 ```
 # docker-compose up -d
 ```
+## Dashboard haproxy
 
+http://seu-ip:70
 
-## Caso queira usar em failover
-
+## Caso queira usar em failover com keepalived
 
 ```
 # yum install -y keepalived 
@@ -58,4 +60,6 @@ vrrp_instance VI_1 {
 }
 
 ```
+![image](https://user-images.githubusercontent.com/30154971/120698974-2926c300-c486-11eb-8b45-28c1d17acf69.png)
 
+![image](https://user-images.githubusercontent.com/30154971/120699033-42c80a80-c486-11eb-84a8-3bb1e9bb77be.png)
