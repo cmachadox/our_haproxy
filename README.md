@@ -11,13 +11,15 @@ http://seu-ip:70
 
 ## Caso queira usar em failover com keepalived
 
+**Instalar o pacote no server 01 e 02**
 ```
 # yum install -y keepalived 
-
 ```
 
-
 **Config Server 1** 
+```
+# vim /etc/keepalived/keepalived.conf
+```
 ```
 vrrp_script chk_haproxy {
   script "pidof haproxy"
@@ -40,6 +42,9 @@ vrrp_instance VI_1 {
 ```
 
 **Config Server 2** 
+```
+# vim /etc/keepalived/keepalived.conf
+```
 ```
 vrrp_script chk_haproxy {
   script "pidof haproxy"
