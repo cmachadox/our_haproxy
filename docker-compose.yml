@@ -8,30 +8,32 @@ services:
     restart: always
     volumes:
             - ./web01:/usr/share/nginx/html
-    ports:
-            - 8081:80
+    expose:
+            - 80
   web02:
     image: nginx
     container_name: web02
     restart: always
     volumes:
             - ./web02:/usr/share/nginx/html
-    ports:
-            - 8082:80
+    expose:
+            - 80
   web03:
     image: nginx
     container_name: web03
     restart: always
     volumes:
             - ./web03:/usr/share/nginx/html
-    ports:
-            - 8083:80
+    expose:
+            - 80
   
   haproxy:
     image: haproxy:2.3
     container_name: haproxy
     restart: always
     volumes:
-           - ./haproxy:/usr/local/etc/haproxy/:ro
+            - ./haproxy:/haproxy-override
+            - ./haproxy:/usr/local/etc/haproxy/:ro
     ports:
             - 80:80
+            - 70:70
